@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Панель генерации ключей</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="auth-container">
+        <h2>Авторизация</h2>
+        <form id="auth-form">
+            <label for="username">Имя пользователя:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Пароль:</label>
+            <input type="password" id="password" name="password" required>
+            <button type="submit">Войти</button>
+        </form>
+    </div>
+
+    <div id="key-container" style="display: none;">
+        <h2>Панель генерации ключей</h2>
+        <button id="generate-key">Сгенерировать ключ</button>
+        <select id="key-duration">
+            <option value="1">1 день</option>
+            <option value="7">7 дней</option>
+            <option value="30">30 дней</option>
+            <option value="60">60 дней</option>
+        </select>
+        <p id="key-output"></p>
+
+        <div class="menu">
+            <button onclick="showSection('inactive-keys')">Неактивированные ключи</button>
+            <button onclick="showSection('active-keys')">Активированные ключи</button>
+        </div>
+
+        <div id="inactive-keys-section" class="keys-section">
+            <h3>Неактивированные ключи</h3>
+            <ul id="inactive-keys"></ul>
+        </div>
+
+        <div id="active-keys-section" class="keys-section" style="display: none;">
+            <h3>Активированные ключи</h3>
+            <ul id="active-keys"></ul>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
